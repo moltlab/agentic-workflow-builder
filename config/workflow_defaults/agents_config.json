@@ -1,0 +1,37 @@
+{
+  "master": {
+    "type": "simple",
+    "description": "Initialize workflow with user data",
+    "prompt": null,
+    "tools": [],
+    "output_fields": ["user_name", "query", "context"]
+  },
+  "information_retriever": {
+    "type": "llm",
+    "description": "Answers queries using available context or general knowledge",
+    "prompt": "You are an intelligent assistant. Answer the following query.\n\nQuery: {query}\n\nAvailable Context: {context}\n\nInstructions:\n1. If context is provided and sufficient, use it to answer\n2. If context is empty but you have confident knowledge about the topic, provide a comprehensive answer\n3. If you lack sufficient information to answer confidently, respond with exactly: UNABLE_TO_ANSWER\n\nProvide your response:",
+    "tools": [],
+    "output_fields": ["messages"]
+  },
+  "web_search": {
+    "type": "llm_with_tools",
+    "description": "Uses web_search_tool to find current information",
+    "prompt": "Research and provide comprehensive, up-to-date information about: {query}\n\nUse the web_search_tool to find relevant and current information.",
+    "tools": ["web_search_tool"],
+    "output_fields": ["messages"]
+  },
+  "email_generator": {
+    "type": "llm",
+    "description": "Generate professional email using gathered information",
+    "prompt": "Generate a professional welcome email for {user_name} that incorporates the following information:\n\n{information}\n\nMake it warm, professional, and relevant to the information provided.",
+    "tools": [],
+    "output_fields": ["messages"]
+  },
+  "face_match": {
+    "type": "llm_with_tools",
+    "description": "Uses face_match_tool to verify face match",
+    "prompt": "Verify if the face in both the images are same. If yes, return 'success' else 'failure'.",
+    "tools": ["skyc_face_match_tool"],
+    "output_fields": ["messages"]
+  }
+}

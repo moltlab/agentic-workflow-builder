@@ -1,0 +1,17 @@
+# Minimal logging configuration (dedicated file; no dependency on config.yaml)
+logging:
+  show_llm_outputs: false
+  levels:
+    root: INFO
+    agent: ERROR
+    tool: INFO
+    db: INFO
+    rag: INFO
+    httpx: WARNING
+    litellm: WARNING
+    alembic: WARNING
+    embedchain: WARNING
+    uvicorn.access: CRITICAL
+    uvicorn.error: WARNING
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/agent.log"

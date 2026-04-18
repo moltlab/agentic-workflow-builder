@@ -1,0 +1,44 @@
+{
+  "workflow_name": "hierarchical_information_workflow",
+  "description": "Hierarchical workflow with information retrieval and web search fallback",
+  "state_schema": {
+    "user_name": "str",
+    "query": "str",
+    "context": "str",
+    "messages": "list"
+  },
+  "nodes": [
+    {
+      "id": "master",
+      "agent": "master",
+      "type": "entry"
+    },
+    {
+      "id": "information_retriever",
+      "agent": "information_retriever"
+    },
+    {
+      "id": "welcome_email",
+      "agent": "email_generator",
+      "type": "exit"
+    }
+  ],
+  "edges": [
+    {
+      "from": "START",
+      "to": "master"
+    },
+    {
+      "from": "master",
+      "to": "information_retriever"
+    },
+    {
+      "from": "information_retriever",
+      "to": "welcome_email"
+    },
+    {
+      "from": "welcome_email",
+      "to": "END"
+    }
+  ]
+}

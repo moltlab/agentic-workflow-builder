@@ -1,0 +1,87 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+
+# Environment variables
+.env
+.env.local
+
+# Large files and models
+models/
+*.bin
+*.pt
+*.pth
+*.onnx
+
+# Documentation
+docs/_build/
+out.txt
+output.txt
+db/agents.sqbpro
+data/*.pdf
+
+
+project_structure.txt
+ai_agentic_schema.sql
+queries.sql
+data/*
+.coverage
+docs/
+
+# Unwanted files
+span_scan_dashboard/stru_expd_dash.py
+span_scan_dashboard/trace*
+span_scan_dashboard/get_traces.py
+span_scan_dashboard/backup*
+config_driven_workflow_graph.png
+hierarchical_workflow_graph.png
+
+# Cloud credentials (NEVER commit these)
+credentials/
+*.json.key
+*-service-account*.json
+gcs-key*.json
+*.pem
+*.p12
+
+# Logs
+logs/
+*.log
+

@@ -1,0 +1,42 @@
+# =============================================================================
+# Agentic Workflow Builder - Base Configuration
+#
+# All sensitive values (API keys, passwords, URLs) are read from environment
+# variables via config_loader.py. This file contains only safe defaults.
+# Never put secrets directly in this file.
+# =============================================================================
+
+# LLM defaults (overridden at runtime by agent-level config from DB)
+llms:
+  openai:
+    model: "gpt-4o"
+    temperature: 0.7
+    max_tokens: 2000
+  deepseek:
+    model: "deepseek-chat"
+    temperature: 0.3
+    max_tokens: 8196
+  qwen:
+    model: "Qwen3-32B"
+    temperature: 0.3
+    max_tokens: 2048
+  ollama:
+    model: "llama2"
+    temperature: 0.7
+    max_tokens: 2000
+  local:
+    model: "custom-llm"
+    temperature: 0.7
+    max_tokens: 2000
+
+# MCP server defaults (overridden by MCP_SERVER_URL env var)
+mcp:
+  enabled: true
+  server_url: "http://localhost:8001/mcp"
+
+# RAG defaults (overridden by env vars)
+rag:
+  embedding_model: "text-embedding-ada-002"
+  chunk_size: 1000
+  chunk_overlap: 200
+  vector_store_path: ".vector_store/vector_store.json"
