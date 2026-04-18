@@ -81,7 +81,8 @@ gcs-key*.json
 *.pem
 *.p12
 
-# Logs
 logs/
+CLAUDE.md
+graphify-out/
 *.log
 
