@@ -7,7 +7,6 @@ API endpoints for login, logout, and user information.
 from fastapi import APIRouter, HTTPException, status, Depends, Response
 from api.schemas.auth import LoginRequest, LoginResponse, LogoutResponse, CurrentUser
 from api.middleware.auth_middleware import get_current_user
-from utils.onboardo_client import OnboardOClient, get_onboardo_client
 from utils.logging_utils import get_logger
 
 logger = get_logger('auth_routes')
